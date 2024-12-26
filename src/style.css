@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Calistoga", serif;
+    scrollbar-width: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hide{
+    transform: translateY(-100%);
+    position: fixed;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    background-color: white;
+    width: 100%;
+    min-height: 10vh;
+    max-height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    transition: transform 1.5s ease-in-out;
+}
+
+nav img{
+    grid-column: 1 / 2;
+    align-self: center;
+    height: 8vh;
+}
+
+.searchContainer{
+    grid-column: 2 / 3;
+    align-self: center;
+    justify-self: center;
+    width: inherit;
+    position: relative;
+}
+
+#searchBar{
+    margin-top: 1%;
+    width: 100%;
+    height: 4vh;
+    border: 1px solid gray;
+    border-radius: 50px;
+    outline: none;
+}
+
+#searchBar::placeholder {
+    color: gray;
+    opacity: 1;
+    padding-left: 10px;
+}
+
+.searchButton{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10%;
+    border: 1px solid gray;
+    background-color: black;
+    transform: translateY(-48%);
+    height: 4vh;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+.linkContainer{
+    grid-column: 3 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.linkContainer a{
+    text-decoration: none;
+    color: black;
+}
+
+.linkContainer a:hover{
+    text-decoration: underline;
+}
+
+#collapse{
+    background-color: black;
+    color: white;
+    position: absolute;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+}
+
+.mainContent{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url(../images/headerIMG.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0 10px 5px rgb(192, 192, 192);
+    overflow: auto;
+    scrollbar-width: none;
+    display: grid;
+    grid: repeat(auto-fill, minmax(25%, 1fr)) / repeat(auto-fill, minmax(25%, 1fr));
+}
+
+.mainHeader{
+    grid-area: 2 / 1 / 4 / 2;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 5rem;
+}
+
+.mainHeader span{
+    align-self: flex-end;
+}
+
+.mainHeader span:nth-of-type(2){
+    font-size: 1rem;
+    align-self: flex-end;
+}
+
+.mainContent button{
+    grid-area: 2 / 2 / 4 / 4;
+    align-self: center;
+    justify-self: center;
+    min-height: 20%;
+    min-width: 20%;
+    border-radius: 50px;
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.imgContainer{
+    grid-area: 1 / 4 / 5 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    max-height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+    padding: 10%;
+}
+
+.imgContainer img{
+    width: 70%;
+    height: auto;
+    margin-bottom: 10%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 1.5s ease-in-out;
+}
+
+.imgContainer img:focus{
+    position: absolute;
+    width: 25%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+
+.infoContainer{
+    min-height: 50vh;
+    width: 100%;
+    padding: 0 15% 0 15%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+
+.infoContainer article{
+    grid-column: 1 / 2;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.infoContainer h1, ul{
+    height: fit-content;
+    padding: 0;
+    list-style-type: none
+}
+
+.infoContainer img{
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+    height: auto;
+}
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

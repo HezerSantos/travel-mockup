@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+    <title>JAPAN | Travel</title>
+</head>
+<body>
+    <nav>
+        <img src="../images/logo.png" alt="logo">
+        <div class="searchContainer">
+            <button class="searchButton">Go</button>
+            <input type="text" name="searchbar" id="searchBar" placeholder="search a destination">
+        </div>
+        <div class="linkContainer">
+            <a href="" id = "test">About Us</a>
+            <a href="">Our Sponsors</a>
+            <a href="">Login/SignUp</a>
+        </div>
+        <button id="collapse">▲</button>
+    </nav>
+    <header class="mainContent">
+        <h1 class="mainHeader">
+            Travel to
+            <span>JAPAN</span>
+            <span>plan your adventure now</span> 
+        </h1>
+        <button class="moreButton">Book Now</button>
+        <figure class="imgContainer">
+            <img src="../images/scOne.jpg" alt="scenery one" id="imgOne" tabindex="0">
+            <img src="../images/scTwo.jpg" alt="scenery two" id="imgTwo" tabindex="0">
+            <img src="../images/scThree.jpg" alt="scenery three" id="imgThree" tabindex="0">
+            <img src="../images/scFour.jpg" alt="scenery three" id="imgTFour" tabindex="0">
+            <img src="../images/scFive.png" alt="scenery three" id="imgFive" tabindex="0"> 
+            <img src="../images/scSix.jpg" alt="scenery three" id="imgSix" tabindex="0">
+        </figure>
+    </header>
+    <main class="infoContainer">
+        <article>
+            <h1>Why Japan?</h1>
+            <ul>
+                <li><strong>Cultural Heritage:</strong> Japan’s rich cultural heritage is showcased through 
+                    traditional practices like tea ceremonies and festivals, alongside beautifully
+                    preserved historical sites.
+                </li>
+                <br>
+                <li>
+                    <strong>Technological Innovation:</strong> The country is a global leader in technology, known 
+                    for advancements such as the Shinkansen (bullet trains) and influential companies 
+                    like Sony and Toyota.
+                </li>
+                <br>
+                <li>
+                    <strong>Culinary Diversity:</strong> Japanese cuisine is celebrated for its artistry and flavor, 
+                    with iconic dishes like sushi and ramen reflecting a deep appreciation for seasonal ingredients 
+                    and presentation.
+                </li>
+            </ul>
+        </article>
+        <img src="../images/scSeven.jpg" alt="japan map">
+    </main>
+    <footer>
+        ----- I am a footer -----
+    </footer>
+
+    <script>
+
+        //Im just practicing js and expanding the page. These variable names are a refleciton of that lol
+        const button = document.querySelector(".moreButton");
+        button.addEventListener('click', () => {
+            alert("I dont do anything")
+        })
+        button.addEventListener('mousedown', () => {
+            button.style.backgroundColor = 'white';
+            button.style.color = 'black'
+        })
+        button.addEventListener('mouseup', () => {
+            button.style.background = 'transparent';
+            button.style.color = 'white'
+        })
+
+        const buttonTwo = document.querySelector(".searchButton");
+        const input = document.querySelector("#searchBar")
+        buttonTwo.addEventListener('click', () => {
+            input.value = '';
+        })
+
+        const buttonThree = document.querySelector("#collapse");
+        const nav = document.querySelector("nav")
+        const a = document.querySelector("#test")
+        buttonThree.addEventListener('click', ()  => {
+            nav.classList.toggle('hide');
+            if (buttonThree.innerHTML.trim() === '▼') {
+                buttonThree.innerHTML = '▲';
+                buttonThree.style.transform = 'translateY(-50%)';
+            } else {
+                buttonThree.innerHTML = '▼';
+                buttonThree.style.transform = 'translateY(150%)';
+            }
+                    
+        });
+    </script>
+</body>
+</html>
